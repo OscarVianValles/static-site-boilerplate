@@ -86,6 +86,7 @@
     "ftp-deploy": "^2.3.3",
     "reset-css": "^4.0.1",
     "sanitize.css": "^11.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
     "webpack-dev-server": "^3.8.0"
   }
 }
