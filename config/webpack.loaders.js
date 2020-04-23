@@ -34,7 +34,7 @@ const js = {
 
 // Style loaders
 const styleLoader = {
-  loader: 'style-loader'
+  loader: 'style-loader',
 };
 
 const cssLoader = {
@@ -47,9 +47,7 @@ const cssLoader = {
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    plugins: [
-      require('autoprefixer')(),
-    ],
+    plugins: [require('autoprefixer')()],
     sourceMap,
   },
 };
@@ -93,34 +91,10 @@ const less = {
   ],
 };
 
-// Image loaders
-const imageLoader = {
-  loader: 'image-webpack-loader',
-  options: {
-    bypassOnDebug: true,
-    gifsicle: {
-      interlaced: false,
-    },
-    optipng: {
-      optimizationLevel: 7,
-    },
-    pngquant: {
-      quality: '65-90',
-      speed: 4,
-    },
-    mozjpeg: {
-      progressive: true,
-    },
-  },
-};
-
 const images = {
   test: /\.(gif|png|jpe?g|svg)$/i,
   exclude: /fonts/,
-  use: [
-    'file-loader?name=images/[name].[hash].[ext]',
-    config.env === 'production' ? imageLoader : null,
-  ].filter(Boolean),
+  use: ['file-loader?name=images/[name].[hash].[ext]'].filter(Boolean),
 };
 
 // Font loaders
@@ -152,13 +126,4 @@ const videos = {
   ],
 };
 
-module.exports = [
-  html,
-  js,
-  css,
-  sass,
-  less,
-  images,
-  fonts,
-  videos,
-];
+module.exports = [html, js, css, sass, less, images, fonts, videos];
